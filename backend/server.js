@@ -23,7 +23,7 @@ app.use(
   }),
 )
 app.use(cors())
-app.use('/api', employeeRoute)
+app.use('/', employeeRoute)
 
 // Create port
 const port = process.env.PORT || 4000
