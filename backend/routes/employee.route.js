@@ -3,7 +3,16 @@ const app = express()
 const employeeRoute = express.Router()
 
 // Employee model
-let Employee = require('../models/Employee')
+let Employee = require('../models/Employee');
+const empl = new Employee({"name":"akhilp","email":"akhilp@gmail.com","designation":"Finance","phoneNumber":"9875643210"});
+empl.save();
+
+Employee.find(function(err, empls) {
+  if(err){
+    console.log(err)}
+  else {
+    empls.forEach(empl => {console.log(empl.name);
+  });
 
 // Add Employee
 employeeRoute.route('/create').post((req, res, next) => {
