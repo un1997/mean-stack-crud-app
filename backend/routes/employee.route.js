@@ -6,7 +6,7 @@ const employeeRoute = express.Router()
 let Employee = require('../models/Employee')
 
 // Add Employee
-employeeRoute.route('/api/create').post((req, res, next) => {
+employeeRoute.route('/create').post((req, res, next) => {
   console.log('Creation of employee called');
   Employee.create(req.body, (error, data) => {
     if (error) {
