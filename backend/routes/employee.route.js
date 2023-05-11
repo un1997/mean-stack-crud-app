@@ -7,6 +7,7 @@ let Employee = require('../models/Employee')
 
 // Add Employee
 employeeRoute.route('/api/create').post((req, res, next) => {
+  console.log('Creation of employee called');
   Employee.create(req.body, (error, data) => {
     if (error) {
       return next(error)
@@ -18,6 +19,7 @@ employeeRoute.route('/api/create').post((req, res, next) => {
 
 // Get All Employees
 employeeRoute.route('/api').get((req, res) => {
+  console.log('Get all employees called');
   Employee.find((error, data) => {
     if (error) {
       return next(error)

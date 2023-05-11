@@ -53,10 +53,13 @@ export class EmployeeCreateComponent implements OnInit {
   }
 
   onSubmit() {
+    console.log('Submit called');
     this.submitted = true;
     if (!this.employeeForm.valid) {
+      console.log('inside if called');
       return false;
     } else {
+      console.log('inside else called');
       return this.apiService.createEmployee(this.employeeForm.value).subscribe({
         complete: () => {
           console.log('Employee successfully created!'),
