@@ -8,13 +8,15 @@ let Employee = require('../models/Employee')
 // Add Employee
 employeeRoute.route('/create').post((req, res, next) => {
   console.log('Creation of employee called');
-  Employee.create(req.body, (error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      res.json(data)
-    }
-  })
+  // Employee.create(req.body, (error, data) => {
+  //   if (error) {
+  //     return next(error)
+  //   } else {
+  //     res.json(data)
+  //   }
+  // })
+  const empl = new Employee(req.body);
+  empl.save();
 })
 
 // Get All Employees
