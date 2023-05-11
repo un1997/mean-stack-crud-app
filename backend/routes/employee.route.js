@@ -24,13 +24,16 @@ employeeRoute.route('/create').post((req, res, next) => {
 
 // Get All Employees
 employeeRoute.route('/test').get((req, res) => {
-  console.log('Get all employees called');
-  Employee.find((error, data) => {
-    if (error) {
-      return next(error)
-    } else {
-      res.json(data)
-    }
+  // console.log('Get all employees called');
+  // Employee.find((error, data) => {
+  //   if (error) {
+  //     return next(error)
+  //   } else {
+  //     res.json(data)
+  //   }
+  // })
+  res.status(200).json({
+    msg: 'worked',
   })
 })
 
