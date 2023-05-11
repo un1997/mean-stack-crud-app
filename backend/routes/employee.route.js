@@ -16,7 +16,10 @@ employeeRoute.route('/create').post((req, res, next) => {
   //   }
   // })
   const empl = new Employee(req.body);
-  empl.save();
+  empl.save(function(err, data){
+    if (err) throw err;
+     return res.json(data);
+  });
 })
 
 // Get All Employees
