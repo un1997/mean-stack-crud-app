@@ -15,25 +15,25 @@ employeeRoute.route('/create').post((req, res, next) => {
   //     res.json(data)
   //   }
   // })
-  const empl = new Employee(req.body);
-  empl.save(function(err, data){
-    if (err) throw err;
-     return res.json(data);
-  });
+  // const empl = new Employee(req.body);
+  // empl.save(function(err, data){
+  //   if (err) throw err;
+  //    return res.json(data);
+  // });
+  res.status(200).json({
+    msg: 'worked',
+  })
 })
 
 // Get All Employees
 employeeRoute.route('/test').get((req, res) => {
-  // console.log('Get all employees called');
-  // Employee.find((error, data) => {
-  //   if (error) {
-  //     return next(error)
-  //   } else {
-  //     res.json(data)
-  //   }
-  // })
-  res.status(200).json({
-    msg: 'worked',
+  console.log('Get all employees called');
+  Employee.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
   })
 })
 
